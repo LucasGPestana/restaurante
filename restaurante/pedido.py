@@ -1,8 +1,8 @@
-import mesa
-
 produtos_disponiveis = {'refrigerante': 1.5, 'hamburguer': 10.0, 'hot-dog': 9.50}
    
 def anotar_pedido():
+
+  import mesa
 
   mesas = mesa.pegar_mesas()
   produtos_escolhidos = list()
@@ -33,7 +33,7 @@ def anotar_pedido():
 
     while True:
 
-      produto_escolhido = input("Digite o nome do produto escolhido pelo(s) cliente(s): ")
+      produto_escolhido = input("Digite o nome do produto escolhido pelo(s) cliente(s): ").lower()
 
       if produto_escolhido in produtos_disponiveis.keys():
           produtos_escolhidos.append({produto_escolhido: produtos_disponiveis[produto_escolhido]})

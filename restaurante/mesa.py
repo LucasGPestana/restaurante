@@ -1,4 +1,4 @@
-import pedido
+import pedido, nota_fiscal
 
 # Passo 1
 
@@ -17,7 +17,7 @@ def cadastrar_mesa():
             print(f"[{mesa}]", end="")
       print()
 
-      num_mesa = int(input("Escolha uma das mesas dispníveis: "))
+      num_mesa = int(input("Escolha uma das mesas disponíveis: "))
 
       if num_mesa in mesas_disponiveis:
          mesas_disponiveis.remove(num_mesa)
@@ -47,3 +47,11 @@ def adicionar_comanda():
    for mesa in mesas:
       if mesa_evidencia['numero_mesa'] == mesa['numero_mesa']:
          mesa['comanda'] = mesa_evidencia['comanda']
+
+def adicionar_conta():
+
+   mesa_evidencia = nota_fiscal.gerar_conta()
+   
+   for mesa in mesas:
+      if mesa_evidencia['numero_mesa'] == mesa['numero_mesa']:
+         mesa['conta'] = mesa_evidencia['conta']
