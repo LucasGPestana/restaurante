@@ -17,8 +17,7 @@ while True:
           adicionar_conta()
       case 4:
           gerar_relatorio_diario()
+          break
       case _:
           break
-  
-print(pegar_mesas())
 
